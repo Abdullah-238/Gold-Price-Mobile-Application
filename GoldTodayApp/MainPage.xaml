@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoldTodayApp.MainPage" BackgroundColor="CadetBlue" >
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Border">
+                <Setter Property="Stroke" Value="Black"></Setter>
+                <Setter Property="StrokeShape" >
+                    <RoundRectangle CornerRadius="10"/>
+                </Setter>
+            </Style>
+
+            <Style TargetType="Image">
+                <Setter Property="WidthRequest" Value="24"></Setter>
+                <Setter Property="HeightRequest" Value="24"></Setter>
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"></Setter>
+                <Setter Property="VerticalOptions" Value="Center"></Setter>
+                <Setter Property="TextColor" Value="CadetBlue"></Setter>
+            </Style>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView >
+        
+   
+    <StackLayout Padding="24" Spacing="10" >
+
+            <Label Text="Gold Price today" FontSize="30" FontAttributes="Bold" TextColor="Black"/>
+
+            <Label Text="Please select your choose : "  FontSize="16"  TextColor="White"/>
+
+        <HorizontalStackLayout Spacing="30">
+            <RadioButton  CheckedChanged="RadioButton_CheckedChanged" x:Name="rbGold"  Content="Gold"/>
+            <RadioButton IsChecked="True" CheckedChanged="RadioButton_CheckedChanged" x:Name="rbSilver" Content="Silver"/>
+            <RadioButton CheckedChanged="RadioButton_CheckedChanged" x:Name="rbBitCoin" Content="Bitcoin"/>
+        </HorizontalStackLayout>
+
+
+        <VerticalStackLayout Spacing="15" HorizontalOptions="FillAndExpand" >
+
+            <Border>
+                <VerticalStackLayout BackgroundColor="White"   Padding="15" Spacing="10">
+                    <HorizontalStackLayout Spacing="4">
+                        <Image Source="check.svg" ></Image>
+                        <Label Text="Symbol : "></Label>
+                    </HorizontalStackLayout>
+                    <Label x:Name="lblSymbol" Text="N\A" FontSize="Medium" TextColor="Black" VerticalOptions="Center" ></Label>
+                </VerticalStackLayout>
+            </Border>
+
+
+            <Border>
+                <VerticalStackLayout BackgroundColor="White"   Padding="15" Spacing="10">
+
+                <HorizontalStackLayout Spacing="4">
+                    <Image Source="short2.svg" ></Image>
+                    <Label Text="Name : "  ></Label>
+                </HorizontalStackLayout>
+
+                <Label x:Name="lblName" Text="N\A"  TextColor="Black"  ></Label>
+                </VerticalStackLayout>
+            </Border>
+
+            <Border>
+
+                <VerticalStackLayout BackgroundColor="White"   Padding="15" Spacing="10">
+
+                <HorizontalStackLayout Spacing="4">
+                    <Image Source="attach2.svg"  ></Image>
+                    <Label Text="Price : "></Label>
+                </HorizontalStackLayout>
+
+                <Label  x:Name="lblPrice" Text="00"  TextColor="Black"  ></Label>
+                
+                 </VerticalStackLayout>
+            </Border>
+
+            <Border>
+
+                <VerticalStackLayout BackgroundColor="White"   Padding="15" Spacing="10">
+
+                    <HorizontalStackLayout Spacing="4">
+                        <Image Source="update.svg"  ></Image>
+                        <Label Text="Last Updated : " ></Label>
+                    </HorizontalStackLayout>
+
+                    <Label  x:Name="lblUpdated" Text="N\A" TextColor="Black" VerticalOptions="Center" ></Label>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+
+
+        </VerticalStackLayout>
+
+
+
+    </StackLayout>
+
+    </ScrollView>
+
+
+</ContentPage>
